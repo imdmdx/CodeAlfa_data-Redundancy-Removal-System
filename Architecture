@@ -1,0 +1,41 @@
+                 DATA REDUNDANCY
+                  REMOVAL SYSTEM
+                         |
+                         v
+                    Amazon EC2
+                         |
+                         v
+                  Python Application
+                         |
+               +---------+---------+
+               |                   |
+               v                   v
+         Input Validation    Email Normalization
+               |                   |
+               +---------+---------+
+                         |
+                         v
+                 Conditional Write
+                         |
+                         v
+                  Amazon DynamoDB
+                         |
+                 +-------+-------+
+                 |               |
+                 v               v
+             New Record      Duplicate Key
+                 |               |
+                 v               v
+              Insert           Reject
+                 |               |
+                 +-------+-------+
+                         |
+                         v
+                 Application Logs
+                         |
+                         v
+                 Amazon CloudWatch
+
+        AWS CloudTrail provides API auditing.
+        IAM controls permissions to AWS resources.
+        VPC and security groups control networking.
